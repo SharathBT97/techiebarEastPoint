@@ -1,0 +1,52 @@
+package sampleee;
+import java.util.Scanner;
+public class BankAcc {
+	float bal=50000f,dep,with;int ch;
+void deposit()
+{
+	 System.out.print("enter amount to deposit:");
+	 Scanner sc1=new Scanner(System.in);
+      dep=sc1.nextFloat();
+      bal+=dep;
+      System.out.println("amount:"+dep +" deposited and updated balance is:"+ bal);
+      sc1.close();
+      return;
+}
+void withdraw()
+{
+	 System.out.print("enter amount to withdarw:");
+	 Scanner sc2=new Scanner(System.in);
+      with=sc2.nextFloat();
+      bal-=with;
+      System.out.println("amount:"+with +" withdrawed and updated balance is:"+ bal);
+      sc2.close();
+      return;
+}
+void balance()
+{
+	System.out.println("The balance is:"+bal);
+	return;
+}
+void gen()
+{	
+		do
+		{  System.out.println("1:DEPOST 2:WITHDRAW 3:CheckBALANCE 4:EXIT");
+		  System.out.print("enter ur choice:");
+		  Scanner sc=new Scanner(System.in);
+	      ch= sc.nextInt();
+	      sc.close();
+	    switch(ch)
+	    {
+	    case 1:deposit();break;
+	    case 2:withdraw();break;
+	    case 3:balance();break;
+	    }
+	   
+		  }while(ch!=4);
+		System.exit(0);
+}
+public  static void main(String[] args) {
+		BankAcc j=new BankAcc();
+			j.gen();
+}
+}
